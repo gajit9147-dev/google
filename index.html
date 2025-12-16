@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>College Events • Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="app">
+        <nav class="sidebar">
+            <div class="brand">
+                <div class="logo">CE</div>
+                <div>
+                    <h1>CollegeEvents</h1>
+                    <p class="muted">Event registration</p>
+                </div>
+            </div>
+
+            <ul class="nav">
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li><a href="#create">Create Event</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#registrations">Registrations</a></li>
+            </ul>
+
+            <div class="sidebar-foot muted">
+                Built with HTML, CSS & JS — gajit9147-dev
+            </div>
+        </nav>
+
+        <main class="main">
+            <header class="topbar">
+                <div class="search">
+                    <input type="search" placeholder="Search events, people or tags..." />
+                </div>
+                <div class="actions">
+                    <button class="btn ghost">New</button>
+
+                    <!-- Theme toggle -->
+                    <button id="theme-toggle" class="mode-toggle-label" aria-pressed="false" title="Toggle dark / light">
+            <span class="label-text">Dark</span>
+          </button>
+
+                    <div class="avatar">GD</div>
+                </div>
+            </header>
+
+            <section id="dashboard" class="panel">
+                <div class="panel-head">
+                    <h2>Dashboard</h2>
+                    <p class="muted">Overview of upcoming events and quick actions</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="stat">
+                        <h3>12</h3>
+                        <p class="muted">Upcoming events</p>
+                    </div>
+                    <div class="stat">
+                        <h3>248</h3>
+                        <p class="muted">Total registrations</p>
+                    </div>
+                    <div class="stat">
+                        <h3>4</h3>
+                        <p class="muted">Active organizers</p>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <div class="section-head">
+                        <h3>Upcoming events</h3>
+                        <a href="#events" class="link">View all</a>
+                    </div>
+
+                    <div class="cards">
+                        <article class="card">
+                            <input id="card1" type="checkbox" class="card-toggle" />
+                            <label class="card-body" for="card1">
+                <div class="card-meta">Workshop • 2026-01-10 • 10:00</div>
+                <h4>Intro to Machine Learning</h4>
+                <p class="muted small">Speaker: Dr. R. Sen — Venue: Hall 1</p>
+              </label>
+
+                            <div class="card-modal">
+                                <label class="modal-close" for="card1" aria-hidden="true">✕</label>
+                                <div class="modal-content">
+                                    <h3>Intro to Machine Learning</h3>
+                                    <p class="muted">Workshop • 10 Jan 2026 • 10:00 — Hall 1</p>
+                                    <p>
+                                        Join Dr. R. Sen for a hands-on workshop covering supervised learning basics, datasets, and practical exercises. Seats limited.
+                                    </p>
+                                    <div class="modal-actions">
+                                        <a href="#registrations" class="btn">Register</a>
+                                        <a href="#create" class="btn ghost">Clone Event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <input id="card2" type="checkbox" class="card-toggle" />
+                            <label class="card-body" for="card2">
+                <div class="card-meta">Seminar • 2026-01-12 • 14:00</div>
+                <h4>Climate Action Panel</h4>
+                <p class="muted small">Panel • Venue: Auditorium</p>
+              </label>
+
+                            <div class="card-modal">
+                                <label class="modal-close" for="card2" aria-hidden="true">✕</label>
+                                <div class="modal-content">
+                                    <h3>Climate Action Panel</h3>
+                                    <p class="muted">Panel • 12 Jan 2026 • 14:00 — Auditorium</p>
+                                    <p>
+                                        A cross-disciplinary panel discussing campus climate strategies, sustainability projects, and how students can get involved.
+                                    </p>
+                                    <div class="modal-actions">
+                                        <a href="#registrations" class="btn">Register</a>
+                                        <a href="#create" class="btn ghost">Clone Event</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card card-ghost">
+                            <a class="card-body" href="#create">
+                                <div class="card-meta">Create</div>
+                                <h4>Create New Event</h4>
+                                <p class="muted small">Quickly add a new event to the calendar</p>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section id="create" class="panel">
+                <div class="panel-head">
+                    <h2>Create Event</h2>
+                    <p class="muted">Fill in details and save — this template can persist theme choice with JS.</p>
+                </div>
+
+                <form class="form" action="#" method="post" novalidate>
+                    <div class="form-grid">
+                        <label class="field">
+              <span>Event Title</span>
+              <input type="text" name="title" placeholder="e.g., Robotics Meetup" />
+            </label>
+
+                        <label class="field">
+              <span>Category</span>
+              <select name="category">
+                <option>Workshop</option>
+                <option>Seminar</option>
+                <option>Competition</option>
+                <option>Club</option>
+              </select>
+            </label>
+
+                        <label class="field">
+              <span>Date</span>
+              <input type="date" name="date" />
+            </label>
+
+                        <label class="field">
+              <span>Start Time</span>
+              <input type="time" name="start" />
+            </label>
+
+                        <label class="field">
+              <span>End Time</span>
+              <input type="time" name="end" />
+            </label>
+
+                        <label class="field">
+              <span>Venue</span>
+              <input type="text" name="venue" placeholder="e.g., Seminar Hall A" />
+            </label>
+
+                        <label class="field full">
+              <span>Description</span>
+              <textarea name="description" rows="4" placeholder="Short description for attendees"></textarea>
+            </label>
+
+                        <label class="field">
+              <span>Organizer</span>
+              <input type="text" name="organizer" placeholder="Organizer name" />
+            </label>
+
+                        <label class="field">
+              <span>Capacity</span>
+              <input type="number" name="capacity" placeholder="e.g., 100" />
+            </label>
+
+                        <label class="field">
+              <span>Tags</span>
+              <input type="text" name="tags" placeholder="e.g., AI, Workshop" />
+            </label>
+
+                        <label class="field full">
+              <span>Event Image (optional)</span>
+              <input type="file" accept="image/*" />
+            </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn">Save Event</button>
+                        <button type="reset" class="btn ghost">Reset</button>
+                    </div>
+                </form>
+            </section>
+
+            <section id="events" class="panel">
+                <div class="panel-head">
+                    <h2>Events</h2>
+                    <p class="muted">Browse all events and view details</p>
+                </div>
+
+                <div class="cards cards-wrap">
+                    <article class="card">
+                        <input id="card3" type="checkbox" class="card-toggle" />
+                        <label class="card-body" for="card3">
+              <div class="card-meta">Competition • 2026-02-05</div>
+              <h4>Hackathon Spring 2026</h4>
+              <p class="muted small">Teams • Venue: Lab 3</p>
+            </label>
+
+                        <div class="card-modal">
+                            <label class="modal-close" for="card3" aria-hidden="true">✕</label>
+                            <div class="modal-content">
+                                <h3>Hackathon Spring 2026</h3>
+                                <p class="muted">48-hour event • Prizes & mentorship</p>
+                                <p>Bring your laptop and team. Registration opens soon. Limited slots.</p>
+                                <div class="modal-actions">
+                                    <a href="#registrations" class="btn">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <input id="card4" type="checkbox" class="card-toggle" />
+                        <label class="card-body" for="card4">
+              <div class="card-meta">Club • 2026-03-01</div>
+              <h4>Photography Club Meetup</h4>
+              <p class="muted small">Casual meetup • Venue: Studio</p>
+            </label>
+
+                        <div class="card-modal">
+                            <label class="modal-close" for="card4" aria-hidden="true">✕</label>
+                            <div class="modal-content">
+                                <h3>Photography Club Meetup</h3>
+                                <p class="muted">Bring your camera and portfolio.</p>
+                                <div class="modal-actions">
+                                    <a href="#registrations" class="btn">Register</a>
+                                    <a href="#create" class="btn ghost">Clone Event</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="schedule" class="panel">
+                <div class="panel-head">
+                    <h2>Weekly Schedule</h2>
+                    <p class="muted">A quick glance at the week's events</p>
+                </div>
+
+                <div class="schedule">
+                    <div class="schedule-head">
+                        <div>Time</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                    </div>
+
+                    <div class="schedule-grid">
+                        <div class="time">09:00</div>
+                        <div class="time">11:00</div>
+                        <div class="time">13:00</div>
+                        <div class="time">15:00</div>
+                        <div class="time">17:00</div>
+
+                        <div class="slot event event-blue" style="grid-column: 2; grid-row: 1 / span 2;">
+                            <strong>ML Workshop</strong><br /><span class="muted small">Mon 09:00</span>
+                        </div>
+
+                        <div class="slot event event-green" style="grid-column: 4; grid-row: 2 / span 2;">
+                            <strong>Climate Panel</strong><br /><span class="muted small">Wed 11:00</span>
+                        </div>
+
+                        <div class="slot event event-orange" style="grid-column: 6; grid-row: 3 / span 1;">
+                            <strong>Hackathon</strong><br /><span class="muted small">Fri 13:00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="registrations" class="panel">
+                <div class="panel-head">
+                    <h2>Registrations</h2>
+                    <p class="muted">List of recent registrations (sample)</p>
+                </div>
+
+                <div class="table">
+                    <div class="tr tr-head">
+                        <div>Event</div>
+                        <div>Name</div>
+                        <div>Email</div>
+                        <div>Tickets</div>
+                        <div>Status</div>
+                    </div>
+
+                    <div class="tr">
+                        <div>Intro to ML</div>
+                        <div>Asha K.</div>
+                        <div>asha.k@college.edu</div>
+                        <div>1</div>
+                        <div><span class="chip success">Confirmed</span></div>
+                    </div>
+
+                    <div class="tr">
+                        <div>Hackathon Spring</div>
+                        <div>Ravi P.</div>
+                        <div>ravi.p@college.edu</div>
+                        <div>3</div>
+                        <div><span class="chip pending">Pending</span></div>
+                    </div>
+
+                    <div class="tr">
+                        <div>Photography Meetup</div>
+                        <div>J. Gomez</div>
+                        <div>jgomez@college.edu</div>
+                        <div>1</div>
+                        <div><span class="chip confirmed">Checked-in</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer muted">
+                © CollegeEvents • UI Template — open index.html to run
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Theme toggle JS (client-side)
+        (function() {
+            const KEY = 'ce-theme'; // localStorage key
+            const toggleBtn = document.getElementById('theme-toggle');
+            const labelText = toggleBtn.querySelector('.label-text') || toggleBtn;
+
+            function applyTheme(theme) {
+                const isLight = (theme === 'light');
+                document.body.classList.toggle('light', isLight);
+                toggleBtn.setAttribute('aria-pressed', String(isLight));
+                if (labelText) labelText.textContent = isLight ? 'Light' : 'Dark';
+            }
+
+            // init from localStorage (or system preference fallback)
+            const stored = localStorage.getItem(KEY);
+            if (stored) {
+                applyTheme(stored);
+            } else {
+                const prefersLight = window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches;
+                applyTheme(prefersLight ? 'light' : 'dark');
+            }
+
+            toggleBtn.addEventListener('click', function() {
+                const newTheme = document.body.classList.contains('light') ? 'dark' : 'light';
+                applyTheme(newTheme);
+                localStorage.setItem(KEY, newTheme);
+            });
+        })();
+    </script>
+</body>
+
+</html>

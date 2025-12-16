@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Theme Toggle (Flask)</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 2rem; transition: background .3s, color .3s; }
+body.light{ background:#fff; color:#111; }
+body:not(.light){ background:#0b1220; color:#eef; }
+.toggle { padding: .5rem 1rem; border-radius:8px; cursor:pointer; display:inline-block; background:rgba(255,255,255,.08); color:inherit; text-decoration:none; }
+</style>
+</head>
+<body class="{{ 'light' if theme == 'light' else '' }}">
+  <h1>Server-side Theme Toggle</h1>
+  <p>Current theme: <strong>{{ theme|e }}</strong></p>
+  <a class="toggle" href="{{ url_for('toggle') }}">Toggle theme (server)</a>
+</body>
+</html>
